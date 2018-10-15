@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Luca Bozzetto - Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href='/vendor/bootstrap/css/bootstrap.min.css' rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='/css/blog-home.css' rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/blog">Luca Bozzetto - Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/blog">Blog
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contact">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      
+      <div class="row">
+
+      <div class="col-md-8 order-0">
+          <h1 id="search-h1" class="my-4" hidden>Your Search<small> results</small></h1>
+        <div id="search-hits">
+          <div class="col-md-8">
+  <h1 class="my-4">Posts Tagged
+            <small>"Canada"</small>
+  </h1>
+<ul>
+  
+  
+  
+  
+  
+  
+  
+  <li class="archive_list">
+    <a class="archive_list_article_link" href='/welcome-to-jekyll/'>Hello World!</a><time style="color:#666;font-size:11px;" datetime=''> 01 September 2018</time>
+    <p class="summary">
+    <ul class="tag_list">
+      
+    </ul>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+</div>
+     </div>
+     
+     <div class="mb-4">
+         <div id='poweredby' class="text-right">
+             <img src="https://www.algolia.com/static_assets/images/pricing/pricing_new/algolia-powered-by-14773f38.svg" class="" alt="Powered by Algolia" width="130" height="18">
+            </div>
+            </div>
+             
+   </div>
+
+
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          
+          <!-- Search Widget -->
+          <div class="card my-4 order-1">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body text-center">
+              <div id="search-searchbar"></div>
+            </div>
+          </div>
+          
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Tags</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    
+                
+                
+                
+                    
+                    <li>
+                      <a href='/tag/Web Development'>Web Development</a>
+                    </li>
+                    
+                    
+                
+                
+                    
+                    
+                
+                
+                    
+                    <li>
+                      <a href='/tag/Canada'>Canada</a>
+                    </li>
+                    
+                    
+                  </ul>
+                </div>
+
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    
+                
+                
+                
+                    
+                    
+                
+                
+                    
+                    <li>
+                      <a href='/tag/Javascript'>Javascript</a>
+                    </li>
+                    
+                    
+                
+                
+                    
+                    
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Side Widget</h5>
+            <div class="card-body">
+              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            </div>
+          </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">This blog is maintained with <a href='https://jekyllrb.com' class='footer-ref'><u>Jekyll</u></a> and it's hosted on <a href='https://pages.github.com' class='footer-ref'><u>Github Pages</u></a>.</p>
+      </div>
+    </footer>
+    
+          <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+const oldHTML = document.getElementById('search-hits').innerHTML;
+const search = instantsearch({
+
+  appId: '3RQ16GFO74',
+  apiKey: '18216a575b20060d5d29081e155ffce2',
+  indexName: 'jekyll',
+  searchFunction: function (helper) {
+                if (helper.state.query === '') {
+                    document.querySelector('#search-hits').innerHTML = oldHTML;
+                    document.querySelector('#poweredby').setAttribute('hidden', '');
+                    document.querySelector('#search-h1').setAttribute('hidden', '');
+                    return;
+                }
+                document.querySelector('#poweredby').removeAttribute('hidden');
+                document.querySelector('#search-h1').removeAttribute('hidden');
+                helper.search();
+            }
+});
+
+const hitTemplate = function(hit) {
+  let date = '';
+  if (hit.date) {
+    date = moment.unix(hit.date).format('MMM D, YYYY');
+  }
+
+  let img = hit.image;
+
+  let url = `/${hit.url}#${hit.anchor}`;
+
+  const title = hit._highlightResult.title.value;
+
+  let breadcrumbs = '';
+  if (hit._highlightResult.headings) {
+    breadcrumbs = hit._highlightResult.headings.map(match => {
+      return `<span class="post-breadcrumb">${match.value}</span>`
+    }).join(' > ')
+  }
+
+  const content = hit._highlightResult.html.value;
+
+  return `
+              <div class="card mb-4">
+            <img class="card-img-top" src="/img/${img}" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">${title}</h2>
+              <p class="card-text">${hit.excerpt }</p>
+              <a href="${url}" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on ${date}
+            </div>
+          </div>
+  `;            
+}
+
+
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#search-searchbar',
+    placeholder: 'Search into posts...',
+    poweredBy: false
+  })
+);
+
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '#search-hits',
+    templates: {
+      empty: oldHTML,
+      item: hitTemplate
+    }
+  })
+);
+
+search.start();
+</script>
+        
+    <!-- Bootstrap core JavaScript -->
+    <script src='/vendor/jquery/jquery.min.js'></script>
+    <script src='/vendor/bootstrap/js/bootstrap.bundle.min.js'></script>
+
+  </body>
+
+</html>
