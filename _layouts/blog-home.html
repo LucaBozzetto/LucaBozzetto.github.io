@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% assign z = site.title | append: ' - Blog'%}
+    <title>{{ z }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href='{{ "vendor/bootstrap/css/bootstrap.min.css" | prepend: site.baseurl }}' rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='{{ "css/blog-home.css" | prepend: site.baseurl }}' rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/blog">{{ z }}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/blog">Blog
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contact">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      
+      <div class="row">
+
+      <div class="col-md-8 order-0">
+          <h1 id="search-h1" class="my-4" hidden>Your Search<small> results</small></h1>
+        <div id="search-hits">
+         {{ content }}
+     </div>
+     {% unless site.related_posts %}
+     <div class="mb-4">
+         <div id='poweredby' class="text-right">
+             <img src="https://www.algolia.com/static_assets/images/pricing/pricing_new/algolia-powered-by-14773f38.svg" class="" alt="Powered by Algolia" width="130" height="18">
+            </div>
+            </div>
+             {% endunless %}
+   </div>
+
+
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          {% unless site.related_posts %}
+          <!-- Search Widget -->
+          <div class="card my-4 order-1">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body text-center">
+              <div id="search-searchbar"></div>
+            </div>
+          </div>
+          {% endunless %}
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Tags</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    {% assign count = 0 %}
+                {% for tag in site.tags %}
+                {% assign count = count | plus: 1 %}
+                {% assign x = count | modulo: 2%}
+                    {% if x == 1 %}
+                    <li>
+                      <a href='{{ "tag/" | append: tag[0] | prepend: site.baseurl }}'>{{ tag[0] }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                  </ul>
+                </div>
+
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    {% assign count = 0 %}
+                {% for tag in site.tags %}
+                {% assign count = count | plus: 1 %}
+                {% assign x = count | modulo: 2%}
+                    {% if x == 0 %}
+                    <li>
+                      <a href='{{ "tag/" | append: tag[0] | prepend: site.baseurl }}'>{{ tag[0] }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Side Widget</h5>
+            <div class="card-body">
+              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            </div>
+          </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">This blog is maintained with <a href='https://jekyllrb.com' class='footer-ref'><u>Jekyll</u></a> and it's hosted on <a href='https://pages.github.com' class='footer-ref'><u>Github Pages</u></a>.</p>
+      </div>
+    </footer>
+    {% unless site.related_posts %}
+          {% include algolia.html %}
+        {% endunless %}
+    <!-- Bootstrap core JavaScript -->
+    <script src='{{ "vendor/jquery/jquery.min.js" | prepend: site.baseurl }}'></script>
+    <script src='{{ "vendor/bootstrap/js/bootstrap.bundle.min.js" | prepend: site.baseurl }}'></script>
+
+  </body>
+
+</html>

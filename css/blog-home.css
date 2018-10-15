@@ -1,0 +1,69 @@
+/*!
+ * Start Bootstrap - Blog Home (https://startbootstrap.com/template-overviews/blog-home)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.bg-dark {
+	background-color: #bd5d38!important;
+}
+
+.card-header {
+padding: .75rem 1.25rem;
+margin-bottom: 0;
+background-color: rgba(212,116,85,0.4);
+border-bottom: 1px solid rgba(0,0,0,.125);
+color: #343a40;
+}
+
+.input-group-btn .btn-secondary {
+background-color: #343a40;
+border-color: #343a40;
+}
+
+a {
+color: #bd5d38;
+}
+
+a:hover{
+	color: #343a40;
+}
+
+.btn-primary {
+background-color: #bd5d38;
+border-color: #bd5d38;
+}
+
+.btn-primary:hover {
+background-color: #E6876F;
+border-color: #E6876F;
+/*color: #343a40;*/
+}
+
+.footer-ref{
+	color: #fff;
+}
+
+.footer-ref:hover{
+	color: #343a40;
+}
+
+@media (max-width: 576px) {
+    .order-0{
+    	order: 1;
+    }
+
+    .order-1{
+    	order: 0;
+    }
+}

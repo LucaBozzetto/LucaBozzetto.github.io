@@ -1,0 +1,3 @@
+# Build and Jekyll cache folders
+_site/
+.sass-cache/

@@ -1,0 +1,82 @@
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+const oldHTML = document.getElementById('search-hits').innerHTML;
+const search = instantsearch({
+
+  appId: '{{ site.algolia.application_id }}',
+  apiKey: '{{ site.algolia.search_only_api_key }}',
+  indexName: '{{ site.algolia.index_name }}',
+  searchFunction: function (helper) {
+                if (helper.state.query === '') {
+                    document.querySelector('#search-hits').innerHTML = oldHTML;
+                    document.querySelector('#poweredby').setAttribute('hidden', '');
+                    document.querySelector('#search-h1').setAttribute('hidden', '');
+                    return;
+                }
+                document.querySelector('#poweredby').removeAttribute('hidden');
+                document.querySelector('#search-h1').removeAttribute('hidden');
+                helper.search();
+            }
+});
+
+const hitTemplate = function(hit) {
+  let date = '';
+  if (hit.date) {
+    date = moment.unix(hit.date).format('MMM D, YYYY');
+  }
+
+  let img = hit.image;
+
+  let url = `{{ site.baseurl }}${hit.url}#${hit.anchor}`;
+
+  const title = hit._highlightResult.title.value;
+
+  let breadcrumbs = '';
+  if (hit._highlightResult.headings) {
+    breadcrumbs = hit._highlightResult.headings.map(match => {
+      return `<span class="post-breadcrumb">${match.value}</span>`
+    }).join(' > ')
+  }
+
+  const content = hit._highlightResult.html.value;
+
+  return `
+              <div class="card mb-4">
+            <img class="card-img-top" src="{{ site.baseurl }}img/${img}" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">${title}</h2>
+              <p class="card-text">${hit.excerpt }</p>
+              <a href="${url}" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on ${date}
+            </div>
+          </div>
+  `;            
+}
+
+
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#search-searchbar',
+    placeholder: 'Search into posts...',
+    poweredBy: false
+  })
+);
+
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '#search-hits',
+    templates: {
+      empty: oldHTML,
+      item: hitTemplate
+    }
+  })
+);
+
+search.start();
+</script>

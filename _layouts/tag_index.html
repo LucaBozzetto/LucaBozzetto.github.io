@@ -1,0 +1,23 @@
+---
+layout: blog-home
+---
+ <div class="col-md-8">
+  <h1 class="my-4">Posts Tagged
+            <small>"{{ page.tag }}"</small>
+  </h1>
+<ul>
+  {% for post in site.posts %}
+  {% for tag in post.tags %}
+  {% if tag == page.tag %}
+  <li class="archive_list">
+    <a class="archive_list_article_link" href='{{ post.url }}'>{{ post.title }}</a><time style="color:#666;font-size:11px;" datetime=''> {{ post.date | date_to_long_string }}</time>
+    <p class="summary">
+    <ul class="tag_list">
+      
+    </ul>
+  </li>
+  {% endif %}
+  {% endfor %}
+  {% endfor %}
+</ul>
+</div>

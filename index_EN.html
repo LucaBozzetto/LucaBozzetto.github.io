@@ -1,0 +1,118 @@
+---
+layout: home
+lang: en
+alternativelang: Italiano
+langref: "/"
+---
+<!-- ABOUT -->
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">Luca
+            <span class="text-primary">Bozzetto</span>
+          </h1>
+          <div class="subheading mb-5">Computer Science Student ·
+            <a href=
+            {% assign x = '"mailto:' %}
+            {% assign z = x | append: site.email | append: '"'%}
+            {{ z  | encode_email }}>{{ site.email}}</a>
+          </div>
+          <p class="lead mb-5">I am an Italian undergraduate Computer Science student at Ca'Foscari Univerisity of Venice. I'm interested in Computer Security and Web Development. I enjoy making videogames in Unity3D too.</p>
+          <div class="social-icons">
+            <a href={{ site.linkedin }} target="_blank">
+              <i class="fab fa-linkedin-in" ></i>
+            </a>
+            <a href="{{ site.github }}" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="{{ site.twitter }}" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+<!-- END ABOUT -->
+
+<!-- EDUCATION -->
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+          <h2 class="mb-5">Education</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">University of Guelph - Canada</h3>
+              <div class="subheading mb-3">Bachelor of Computing - Exchange student for one academic year</div>
+              <div>Computer Science</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">September 2018 - May 2019</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Ca'Foscari University of Venice</h3>
+              <div class="subheading mb-3">Bachelor of Computing</div>
+              <div>Computer Science - Technologies and Information Science</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">September 2016</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">ITIS Vito Volterra High School - Italy</h3>
+              <div class="subheading mb-3">Informatics</div>
+              <div>Progetto ABACUS course</div>
+              <p>98/100</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">September 2008 - July 2013</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+<!-- END EDUCATION -->
+
+<!-- CONTACT ME -->
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="contact">
+        <div class="my-auto">
+          <h2 class="mb-5">Contact Me</h2>
+          <p>If you have any questions or just want to say 'Hi', drop me a message.
+          I'll get back to you as soon as possible.</p>
+          <div class="container-contact2">
+            <div class="wrap-contact2">
+              <form class="contact2-form validate-form" action="https://formspree.io/luca.bozzetto@icloud.com" method="POST">
+
+                <div class="wrap-input2 validate-input">
+                  <input class="input2" type="text" name="name" required oninvalid="this.setCustomValidity('Name is required')" oninput="setCustomValidity('')">
+                  <span class="focus-input2" data-placeholder="NAME"></span>
+                </div>
+
+                <div class="wrap-input2 validate-input">
+                  <input class="input2" type="text" name="_replyto" required oninvalid="this.setCustomValidity('Valid email is required: ex@abc.xyz')" oninput="setCustomValidity('')">
+                  <span class="focus-input2" data-placeholder="EMAIL"></span>
+                </div>
+
+                <div class="wrap-input2 validate-input">
+                  <textarea class="input2" name="message" required oninvalid="this.setCustomValidity('Message is required')" oninput="setCustomValidity('')"></textarea>
+                  <span class="focus-input2" data-placeholder="MESSAGE"></span>
+                </div>
+
+                <div class="container-contact2-form-btn">
+                  <div class="wrap-contact2-form-btn">
+                    <div class="contact2-form-bgbtn"></div>
+                    <button class="contact2-form-btn">
+                      Send Your Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </section>
+<!-- END CONTACT ME -->

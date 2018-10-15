@@ -1,0 +1,117 @@
+---
+layout: home
+lang: it
+alternativelang: English
+langref: "/index_EN"
+---
+<!-- ABOUT -->
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">Luca
+            <span class="text-primary">Bozzetto</span>
+          </h1>
+          <div class="subheading mb-5">Studente di Informatica ·
+            <a href=
+            {% assign x = '"mailto:' %}
+            {% assign z = x | append: site.email | append: '"'%}
+            {{ z  | encode_email }}>{{ site.email}}</a>
+          </div>
+          <p class="lead mb-5">Ciao, sono Luca e studio Informatica all'Universita' Ca'Foscari di Venezia. Sono appassionato di Cybersecurity e Web Development ma ogni tanto mi piace anche creare qualche gioco con Unity3D.</p>
+          <div class="social-icons">
+            <a href={{ site.linkedin }} target="_blank">
+              <i class="fab fa-linkedin-in" ></i>
+            </a>
+            <a href="{{ site.github }}" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="{{ site.twitter }}" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+<!-- END ABOUT -->
+
+<!-- EDUCATION -->
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+          <h2 class="mb-5">Istruzione</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">University of Guelph - Canada</h3>
+              <div class="subheading mb-3">Bachelor of Computing - Studente per un anno accademico</div>
+              <div>Bando Overseas universita' Ca'Foscari</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Settembre 2018 - Maggio 2019</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Unversita' Ca'Foscari di Venezia</h3>
+              <div class="subheading mb-3">Laurea in Informatica</div>
+              <div>Tecnologie e scienze dell'informazione</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Settembre 2016</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">ITIS Vito Volterra</h3>
+              <div class="subheading mb-3">Informatica</div>
+              <div>Progetto ABACUS</div>
+              <p>98/100</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">Settembre 2008 - Luglio 2013</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+<!-- END EDUCATION -->
+
+<!-- CONTACT ME -->
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="contact">
+        <div class="my-auto">
+          <h2 class="mb-5">Contattami</h2>
+          <p>Se hai qualche domanda o vuoi semplicemente lasciarmi un saluto, non esitare a contattarmi.</p>
+          <div class="container-contact2">
+            <div class="wrap-contact2">
+              <form class="contact2-form validate-form" action="https://formspree.io/luca.bozzetto@icloud.com" method="POST">
+
+                <div class="wrap-input2 validate-input">
+                  <input class="input2" type="text" name="name" required oninvalid="this.setCustomValidity('Inserisci il tuo nome')" oninput="setCustomValidity('')">
+                  <span class="focus-input2" data-placeholder="NOME"></span>
+                </div>
+
+                <div class="wrap-input2 validate-input">
+                  <input class="input2" type="text" name="_replyto" required oninvalid="this.setCustomValidity('Inserisci una mail valida: ex@abc.xyz')" oninput="setCustomValidity('')">
+                  <span class="focus-input2" data-placeholder="EMAIL"></span>
+                </div>
+
+                <div class="wrap-input2 validate-input">
+                  <textarea class="input2" name="message" required oninvalid="this.setCustomValidity('Inserisci un messaggio')" oninput="setCustomValidity('')"></textarea>
+                  <span class="focus-input2" data-placeholder="MESSAGGIO"></span>
+                </div>
+
+                <div class="container-contact2-form-btn">
+                  <div class="wrap-contact2-form-btn">
+                    <div class="contact2-form-bgbtn"></div>
+                    <button class="contact2-form-btn">
+                      Invia
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </section>
+<!-- END CONTACT ME -->
