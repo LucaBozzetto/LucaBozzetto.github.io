@@ -55,6 +55,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-email-protect
+  - jemoji
   # - jekyll-admin
 
 # Exclude from processing.
