@@ -19,6 +19,7 @@ const search = instantsearch({
                 }
                 document.querySelector('#poweredby').removeAttribute('hidden');
                 document.querySelector('#search-h1').removeAttribute('hidden');
+                // helper.setQuery(null);
                 helper.search();
             }
 });
@@ -34,6 +35,7 @@ const hitTemplate = function(hit) {
   let url = `{{ site.baseurl }}${hit.url}#${hit.anchor}`;
 
   const title = hit._highlightResult.title.value;
+  let excerpt = hit.excerpt_html;
 
   let breadcrumbs = '';
   if (hit._highlightResult.headings) {
@@ -49,7 +51,7 @@ const hitTemplate = function(hit) {
             <img class="card-img-top" src="{{ site.baseurl }}img/${img}" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">${title}</h2>
-              <p class="card-text">${hit.excerpt }</p>
+              <p class="card-text">${excerpt}</p>
               <a href="${url}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
@@ -79,4 +81,8 @@ search.addWidget(
 );
 
 search.start();
+
+document.querySelector(".ais-search-box--reset").addEventListener("click", function() {
+  document.querySelector(".ais-search-box--input").value = "";
+});
 </script>
