@@ -58,68 +58,82 @@
       <div class="col-md-8 order-0">
           <h1 id="search-h1" class="my-4" hidden>Your Search<small> results</small></h1>
         <div id="search-hits">
-          <div class="col-md-8">
-  <h1 class="my-4">Posts Tagged
-            <small>"Italiano"</small>
-  </h1>
+                 <!-- Post Content Column -->
+        <!-- <div class="col-lg-8"> -->
+
+          <!-- Title -->
+          <h1 class="mt-4">Realizzare una Single Page Application con Angular e NodeJS</h1>
+
+          <hr>
+
+          <!-- Date/Time -->
+          <p>Posted on 01 May 2019</p>
+
+          <hr>
+
+          <!-- Preview Image -->
+          <img class="img-fluid rounded" src="/img/angular.jpg" alt="">
+
+          <hr>
+
+          <!-- Post Content -->
+          <p><a href="https://angular.io/">Angular</a> (da con confondere con AngularJS) è una delle tecnologie più calde del momento insieme ai suoi cugini React e VueJS per quanto riguarda lo sviluppo web frontend. <br />
+Grazie ad esso possiamo sviluppare applicazioni web anche molto complesse in maniera modulare e utilizzando strumenti di terze parti o scrivendoci interamente da zero tutto il codice ed è per questo che ho deciso di realizzare una piccola e breve guida al suo utilizzo.</p>
+
+<p>Angular supporta e anzi invita caldamente all’utilizzo di Typescript, un superset di Javascript che introduce numerose funzionalità aggiuntive tra cui come il nome suggerisce un maggiore controllo sui tipi.<br />
+Il framework stesso è  scritto in Typescript!<br />
+Imparare ad utilizzare Angular può inizialmente richiedere un pochino di tempo, soprattutto se non si conoscono Typescript o l’approccio MVC ma posso assicurarvi che vi darà non poche soddisfazioni una volta appreso.</p>
+
+<p>Pubblicherò quindi in queste prossime settimane una breve guida su come realizzare una SPA (Single Page Application) con Angular. Il backend verrà realizzato invece con NodeJS in modo tale da rimanere sempre in casa Javascript.<br />
+Questa guida è più una sorta di introduzione alle varie tecnologie ed è scritta da uno studente per chi desidera approcciarsi per la prima volta al mondo di Angular e Node!</p>
+
+<p>Qui di seguito lascio la lista con i link agli articoli finora pubblicati in merito alla guida:<br /></p>
 <ul>
-  
-  
-  
-  <li class="archive_list">
-    <a class="archive_list_article_link" href='/lapplicazione-easyrestaurant/'>L'applicazione: EasyRestaurant</a><time style="color:#666;font-size:11px;" datetime=''> 05 May 2019</time>
-    <p class="summary">
-    <ul class="tag_list">
-      
-    </ul>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="archive_list">
-    <a class="archive_list_article_link" href='/realizzare-una-single-page-application-con-angular-e-nodejs/'>Realizzare una Single Page Application con Angular e NodeJS</a><time style="color:#666;font-size:11px;" datetime=''> 01 May 2019</time>
-    <p class="summary">
-    <ul class="tag_list">
-      
-    </ul>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <li class="archive_list">
-    <a class="archive_list_article_link" href='/hello-world/'>Hello World!</a><time style="color:#666;font-size:11px;" datetime=''> 15 October 2018</time>
-    <p class="summary">
-    <ul class="tag_list">
-      
-    </ul>
-  </li>
-  
-  
-  
-  
-  
+  <li><a href="https://lucabozzetto.github.io/lapplicazione-easyrestaurant/">L’applicazione: gestione di un ristorante</a></li>
 </ul>
-</div>
+
+
+          <hr>
+          <p class="lead">
+            Tags:
+  
+    <a href='/tag/Italiano' style=' font-size: 1rem;'>Italiano</a>,  
+  
+    <a href='/tag/Angular' style=' font-size: 1rem;'>Angular</a>,  
+  
+    <a href='/tag/Guide' style=' font-size: 1rem;'>Guide</a> 
+  
+          </p>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'http://localhost:4000/realizzare-una-single-page-application-con-angular-e-nodejs/';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'http://localhost:4000/realizzare-una-single-page-application-con-angular-e-nodejs/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://lucabozzetto.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+<hr>
      </div>
      
-     <div class="mb-4">
-         <div id='poweredby' class="text-right">
-             <img src="https://www.algolia.com/static_assets/images/pricing/pricing_new/algolia-powered-by-14773f38.svg" class="" alt="Powered by Algolia" width="130" height="18">
-            </div>
-            </div>
-             
    </div>
 
 
@@ -127,14 +141,6 @@
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
 
-          
-          <!-- Search Widget -->
-          <div class="card my-4 order-1">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body text-center">
-              <div id="search-searchbar"></div>
-            </div>
-          </div>
           
           <!-- Categories Widget -->
           <div class="card my-4">
@@ -227,95 +233,6 @@
       </div>
     </footer>
     
-          <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
-
-<script>
-const oldHTML = document.getElementById('search-hits').innerHTML;
-const search = instantsearch({
-
-  appId: '3RQ16GFO74',
-  apiKey: '18216a575b20060d5d29081e155ffce2',
-  indexName: 'jekyll',
-  searchFunction: function (helper) {
-                if (helper.state.query === '') {
-                    document.querySelector('#search-hits').innerHTML = oldHTML;
-                    document.querySelector('#poweredby').setAttribute('hidden', '');
-                    document.querySelector('#search-h1').setAttribute('hidden', '');
-                    return;
-                }
-                document.querySelector('#poweredby').removeAttribute('hidden');
-                document.querySelector('#search-h1').removeAttribute('hidden');
-                // helper.setQuery(null);
-                helper.search();
-            }
-});
-
-const hitTemplate = function(hit) {
-  let date = '';
-  if (hit.date) {
-    date = moment.unix(hit.date).format('MMM D, YYYY');
-  }
-
-  let img = hit.image;
-
-  let url = `/${hit.url}#${hit.anchor}`;
-
-  const title = hit._highlightResult.title.value;
-  let excerpt = hit.excerpt_html;
-
-  let breadcrumbs = '';
-  if (hit._highlightResult.headings) {
-    breadcrumbs = hit._highlightResult.headings.map(match => {
-      return `<span class="post-breadcrumb">${match.value}</span>`
-    }).join(' > ')
-  }
-
-  const content = hit._highlightResult.html.value;
-
-  return `
-              <div class="card mb-4">
-            <img class="card-img-top" src="/img/${img}" alt="Card image cap">
-            <div class="card-body">
-              <h2 class="card-title">${title}</h2>
-              <p class="card-text">${excerpt}</p>
-              <a href="${url}" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on ${date}
-            </div>
-          </div>
-  `;            
-}
-
-
-search.addWidget(
-  instantsearch.widgets.searchBox({
-    container: '#search-searchbar',
-    placeholder: 'Search into posts...',
-    poweredBy: false
-  })
-);
-
-search.addWidget(
-  instantsearch.widgets.hits({
-    container: '#search-hits',
-    templates: {
-      empty: oldHTML,
-      item: hitTemplate
-    }
-  })
-);
-
-search.start();
-
-document.querySelector(".ais-search-box--reset").addEventListener("click", function() {
-  document.querySelector(".ais-search-box--input").value = "";
-});
-</script>
-        
     <!-- Bootstrap core JavaScript -->
     <script src='/vendor/jquery/jquery.min.js'></script>
     <script src='/vendor/bootstrap/js/bootstrap.bundle.min.js'></script>
