@@ -58,6 +58,34 @@ border-color: #E6876F;
 	color: #343a40;
 }
 
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+
+blockquote {
+	border-left: 4px solid #DDD;
+    padding: 0 15px;
+    color: #777;
+}
+
+/*footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}*/
+
 @media (max-width: 576px) {
     .order-0{
     	order: 1;
