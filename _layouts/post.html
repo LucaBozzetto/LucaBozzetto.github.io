@@ -16,7 +16,7 @@ layout: blog-home
           <hr>
 
           <!-- Preview Image -->
-          <img class="img-fluid rounded" src="{{ site.baseurl }}img/{{ page.image }}" alt="">
+          <img class="img-fluid rounded" src="{{ site.baseurl }}img/{{ page.image }}" alt="article image">
 
           <hr>
 
@@ -26,7 +26,7 @@ layout: blog-home
           <p class="lead">
             Tags:
   {% for tags in page.tags %}
-    <a href='{{ "tag/" | append: tags | prepend: site.baseurl }}' style=' font-size: 1rem;'>{{ tags }}</a>{% unless page.tags.last == tags%}, {% endunless%} 
+    <a class="tag-text" href='{{ "tag/" | append: tags | prepend: site.baseurl }}'>{{ tags }}</a>{% unless page.tags.last == tags%}, {% endunless%} 
   {% endfor %}
           </p>
 

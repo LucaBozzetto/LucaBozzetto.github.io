@@ -9,8 +9,9 @@ layout: blog-home
   {% for post in site.posts %}
   {% for tag in post.tags %}
   {% if tag == page.tag %}
+  {% assign timeString = post.date | date_to_long_string %}
   <li class="archive_list">
-    <a class="archive_list_article_link" href='{{ post.url }}'>{{ post.title }}</a><time style="color:#666;font-size:11px;" datetime=''> {{ post.date | date_to_long_string }}</time>
+    <a class="archive_list_article_link" href='{{ post.url }}'>{{ post.title }}</a><time class="tag-index-time" datetime='{{ timeString }}'> {{ timeString }}</time>
     <p class="summary">
     <ul class="tag_list">
       
