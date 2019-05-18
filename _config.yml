@@ -21,7 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Pubblico sul mio blog articoli a tema IT e non solo.
 baseurl: "/" # the subpath of your site, e.g. /blog
 permalink: /:categories/:title/
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://lucabozzetto.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitterLink: "https://twitter.com/LucaBozz"
 github:  "https://github.com/lucabozzetto"
 userprofile_img: "https://pbs.twimg.com/profile_images/828608142854467584/hhne0pE3_400x400.jpg"
