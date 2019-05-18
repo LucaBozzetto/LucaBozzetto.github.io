@@ -78,6 +78,15 @@ blockquote {
     color: #777;
 }
 
+.tag-text {
+  font-size: 1rem;
+}
+
+.tag-index-time {
+  color:#666;
+  font-size:11px;
+}
+
 /*footer {
   position: absolute;
   right: 0;
