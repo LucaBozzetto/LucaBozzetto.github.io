@@ -1,7 +1,7 @@
 ---
-title: Mockup interfacce e definizione API
+title: MongoDB e Mongoose
 layout: post
-date: '2019-06-05 14:59:39'
+date: '2019-07-05 15:00:00'
 comments: true
 tags:
 - Italiano
@@ -15,8 +15,7 @@ excerpt: |-
 
 > Questo articolo fa parte della guida allo sviluppo di una SPA con Angular. Se ti sei perso gli articoli prima [clicca qui][index]
 
-Prima di partire con il coding vero e proprio ho pensato fosse una buona idea definire con precisione l'applicazione sia a livello di funzionalità che a livello di interazioni / usabilità. <br />
-Per questo come prima cosa ho provveduto a studiare un mockup ( [disponibile qui][mockup] ) delle possibili interazioni ed interfacce in modo tale da avere più chiaro in testa il possibile funzionamento dell’applicazione. Successivamente ho provveduto a definire le risorse e i relativi endpoints. <br />
+Dopo aver progettato le nostre API è arrivato finalmente il momento di sviluppare il nostro backend. <br />
 
 API in stile RESTful
 ---------------
