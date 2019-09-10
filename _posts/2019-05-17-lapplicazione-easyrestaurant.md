@@ -69,6 +69,6 @@ Quando il vassoio delle bevande è pronto il barista notifica tale evento al si
 * Visualizzazione statistiche su ciascun cameriere e cuoco (numero clienti serviti, piatti realizzati, etc.)
 
 
-Per oggi direi che è tutto, nel prossimo articolo inizieremo con un veloce design delle interfaccie e con la definizione di un set di API in stile RESTful.
+Per oggi direi che è tutto, nel prossimo articolo inizieremo con un veloce design delle interfacce e con la definizione di un set di API in stile RESTful.
 
 [index]:https://lucabozzetto.github.io/realizzare-una-single-page-application-con-angular-e-nodejs/
