@@ -7,28 +7,84 @@ tags:
 - Italiano
 - Angular
 - Guide
-image: RESTfil-API.png
+image: mongodb.png
 excerpt: |-
-  Scopriamo insieme cosa significa progettare un set di API in stile RESTful e come approcciare al meglio lo sviluppo di un backend. <br />
-  Gli strumenti che ci possono facilitare il compito e cosa dobbiamo tenere in considerazione durante la fase di progettazione e definizione degli endpoints.
+  Dopo aver progettato le nostre API è arrivato finalmente il momento di sviluppare il nostro backend. <br />
+  Una rapida occhiata a MongoDB e MongooseJS ci aiuterà a gestire in maniera rapida le nostre collezioni di dati e le interazioni con un database non relazionale.
 ---
 
 > Questo articolo fa parte della guida allo sviluppo di una SPA con Angular. Se ti sei perso gli articoli prima [clicca qui][index]
 
 Dopo aver progettato le nostre API è arrivato finalmente il momento di sviluppare il nostro backend. <br />
+Avremo sicuramente bisogno di memorizzare i nostri dati in un database e [MongoDB][mongodb] può fare proprio al caso nostro! <br />
+MongoDB infatti è un database non relazione che si intregra particolarmente bene con i linguaggi dinamici come javascript e non richiede una progettazione a priori del database. <br />
+Il database è infatti orientato ai documenti e non alle relazioni tra i dati. Inoltre lo schema dinamico (schema-less) ci permette di salvare dati anche non omogenei (con ad esempio un numero di colonne diverso tra loro) nella stessa collezione!<br />
+Tuttavia utilizzare MongoDB direttamente insieme a Node e Express può rivelarsi un'operazione lunga e poco simpatica. Ecco quindi che in nostro aiuto viene [Mongoose][mongoose].<br />
+Mongoose è una libreria di Object Document Mapping ( ODM ) che permette di definire lo schema dei documenti attraverso oggetti Javascript per effettuare il mapping automatico da e verso il database.<br />
+Grazie a questa comoda libreria andremo a lavorare su oggetti Javascript come siamo abituati ma quest'ultimi ci metterano a disposizione numerosi metodi per salvare e/o effetuare altre operazioni sul nostro database.<br />
+Per essere più chiaro eccovi qualche esempio su come lavorare con mongoose.<br />
 
-API in stile RESTful
----------------
-Con l’acronimo API si intende Application Programming Interface e non è altro che la creazione di una serie di endpoint (delle URL) che rispondono alle richieste fatte da uno sviluppatore.
-Praticamente una raccolta di metodi che ci permettono di collegare librerie o applicazioni presenti su diversi sistemi. <br />
-Il significato dell’acronimo REST è invece REpresentational State Transfer, ovvero una rappresentazione del trasferimento di stato di un determinato dato. REST non è una tecnologia, piuttosto descrive una serie di linee guida e di approcci che definiscono lo stile con cui i dati vengono trasmessi.<br />
-Ora che abbiamo finito con gli acronimi possiamo andare a vedere davvero cosa significa realizzare un set di API RESTful.<br />
-Oramai saper definire API RESTful è un prerequisito per chiunque voglia lavorare su un backend web.<br />
-Tuttavia non esiste uno standard per la realizzazione di una API ma solamente una seria di __linee guida__ che se rispettate garantiscono un buon risultato finale:
-* Consistenza all'interno dell'intera API
-* Stateless ovvero non esistono sessioni nel nostro server e per tanto non salviamo informazioni tra una richiesta e l'altra. Di fatto ogni richiesta è una comunicazione a se stante e il server non conserva memoria di eventuali richiesta precedenti arrivando a non tenere traccia nemmeno delle informazioni di login.
-* Utilizzo degli status code HTTP per velocizzare e facilitare le risposte e la loro leggibilità.
-* Definizione di URL endpoint che seguono una determinata logica 
+Collegamento al database
+--------------------
+Il mio consiglio è quello di realizzare nella vostra cartella dei modelli un file chiamato db.js dove andrete a definire il setup della connessione al database e importerete i vari schemi di Mongoose di cui a breve di parlerò. <br />
+Un esempio di come ho realizzato il mio è il seguente:
+```javascript
+const mongoose = require('mongoose');
+
+let dbURI = 'localhost';
+if (process.env.NODE_ENV === 'production') {
+  dbURI = process.env.MONGODB_URI;
+}
+mongoose.connect(dbURI, {
+  useNewUrlParser: true,
+});
+mongoose.set('useCreateIndex', true);
+
+mongoose.connection.on('connected', () => {
+  console.log(`Mongoose connected to ${dbURI}`);
+});
+mongoose.connection.on('error', (err) => {
+  console.log('Mongoose connection error:', err);
+});
+mongoose.connection.on('disconnected', () => {
+  console.log('Mongoose disconnected');
+});
+
+const gracefulShutdown = (msg, callback) => {
+  mongoose.connection.close( () => {
+    console.log(`Mongoose disconnected through ${msg}`);
+    callback();
+  });
+};
+
+// For nodemon restarts
+process.once('SIGUSR2', () => {
+  gracefulShutdown('nodemon restart', () => {
+    process.kill(process.pid, 'SIGUSR2');
+  });
+});
+// For app termination
+process.on('SIGINT', () => {
+  gracefulShutdown('app termination', () => {
+    process.exit(0);
+  });
+});
+// For Heroku app termination
+process.on('SIGTERM', () => {
+  gracefulShutdown('Heroku app shutdown', () => {
+    process.exit(0);
+  });
+	require('./users');
+});
+```
+Come potete vedere questo file si limita in sostanza a stabilire una connessione con il nostro database e a terminare correttamente quest'ultima in caso di arresto dell'applicazione in maniera non prevista. <br />
+L'ultima riga ossia `require('./users');` ci lascia intendere che stiamo effettuando l'import di un ulteriore modello. <br />
+In questo modello come vedremo tra poco ho definito il mio schema di Mongoose.
+
+Schemas, Models e loro utilizzo
+-----------------------
+
+
 
 Accopiati agli endpoint si utilizzano i metodi HTTP che hanno lo scopo di rappresentare le azioni che intendiamo compiere su una determinata risorsa:
 * __GET__: utililizzato come il nome suggerisce quando desideriamo ottenere una risorsa o set di dati.
@@ -46,6 +102,5 @@ Potete dare un occhiata alle API e alla loro documentazione per EasyRestaurant [
 Nel prossimo articolo daremo un'occhiata veloce a come approcciare lo sviluppo di un backend con NodeJS e le tecnologie che ho utilizzato per rendere lo sviluppo un pochino più veloce e semplice.
 
 [index]:https://lucabozzetto.github.io/realizzare-una-single-page-application-con-angular-e-nodejs/
-[mockup]:https://ibb.co/sCN1gKk
-[postman]:https://www.getpostman.com/
-[easyrestaurant-api]:https://documenter.getpostman.com/view/6803722/SVYxnF9P?version=latest
+[mongodb]:https://www.mongodb.com
+[mongoose]:https://mongoosejs.com
