@@ -18,16 +18,16 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Angular (da con confondere con AngularJS) è una delle tecnologie più calde del momento insieme ai suoi cugini React e VueJS per quanto riguarda lo sviluppo web frontend. Grazie ad esso possiamo sviluppare applicazioni web anche molto complesse in maniera modulare e utilizzando strumenti di terze parti o scrivendoci interamente da zero tutto il codice ed è per questo che ho deciso di realizzare una piccola e breve guida al suo utilizzo." />
 <meta property="og:description" content="Angular (da con confondere con AngularJS) è una delle tecnologie più calde del momento insieme ai suoi cugini React e VueJS per quanto riguarda lo sviluppo web frontend. Grazie ad esso possiamo sviluppare applicazioni web anche molto complesse in maniera modulare e utilizzando strumenti di terze parti o scrivendoci interamente da zero tutto il codice ed è per questo che ho deciso di realizzare una piccola e breve guida al suo utilizzo." />
-<link rel="canonical" href="https://lucabozzetto.github.io/realizzare-una-single-page-application-con-angular-e-nodejs/" />
-<meta property="og:url" content="https://lucabozzetto.github.io/realizzare-una-single-page-application-con-angular-e-nodejs/" />
+<link rel="canonical" href="http://localhost:4000/realizzare-una-single-page-application-con-angular-e-nodejs/" />
+<meta property="og:url" content="http://localhost:4000/realizzare-una-single-page-application-con-angular-e-nodejs/" />
 <meta property="og:site_name" content="Luca Bozzetto" />
-<meta property="og:image" content="https://lucabozzetto.github.io/angular.jpg" />
+<meta property="og:image" content="http://localhost:4000/angular.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-05-01T08:30:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@LucaBozz" />
 <script type="application/ld+json">
-{"description":"Angular (da con confondere con AngularJS) è una delle tecnologie più calde del momento insieme ai suoi cugini React e VueJS per quanto riguarda lo sviluppo web frontend. Grazie ad esso possiamo sviluppare applicazioni web anche molto complesse in maniera modulare e utilizzando strumenti di terze parti o scrivendoci interamente da zero tutto il codice ed è per questo che ho deciso di realizzare una piccola e breve guida al suo utilizzo.","@type":"BlogPosting","url":"https://lucabozzetto.github.io/realizzare-una-single-page-application-con-angular-e-nodejs/","image":"https://lucabozzetto.github.io/angular.jpg","headline":"Realizzare una Single Page Application con Angular e NodeJS","dateModified":"2019-05-01T08:30:00+02:00","datePublished":"2019-05-01T08:30:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://lucabozzetto.github.io/realizzare-una-single-page-application-con-angular-e-nodejs/"},"@context":"http://schema.org"}</script>
+{"description":"Angular (da con confondere con AngularJS) è una delle tecnologie più calde del momento insieme ai suoi cugini React e VueJS per quanto riguarda lo sviluppo web frontend. Grazie ad esso possiamo sviluppare applicazioni web anche molto complesse in maniera modulare e utilizzando strumenti di terze parti o scrivendoci interamente da zero tutto il codice ed è per questo che ho deciso di realizzare una piccola e breve guida al suo utilizzo.","@type":"BlogPosting","url":"http://localhost:4000/realizzare-una-single-page-application-con-angular-e-nodejs/","image":"http://localhost:4000/angular.jpg","headline":"Realizzare una Single Page Application con Angular e NodeJS","dateModified":"2019-05-01T08:30:00+02:00","datePublished":"2019-05-01T08:30:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/realizzare-una-single-page-application-con-angular-e-nodejs/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -49,6 +49,7 @@
 
     <!-- Custom styles for this template -->
     <link href='/css/blog-home.css' rel="stylesheet">
+    <!-- <link href='/css/syntax.css' rel="stylesheet"> -->
 
 
   </head>
@@ -111,19 +112,27 @@
           <hr>
 
           <!-- Post Content -->
-          <p><a href="https://angular.io/">Angular</a> (da con confondere con AngularJS) è una delle tecnologie più calde del momento insieme ai suoi cugini React e VueJS per quanto riguarda lo sviluppo web frontend. <br />
+          <h2 id="introduzione">Introduzione</h2>
+<p><a href="https://angular.io/">Angular</a> (da con confondere con AngularJS) è una delle tecnologie più calde del momento insieme ai suoi cugini React e VueJS per quanto riguarda lo sviluppo web frontend. <br />
 Grazie ad esso possiamo sviluppare applicazioni web anche molto complesse in maniera modulare e utilizzando strumenti di terze parti o scrivendoci interamente da zero tutto il codice ed è per questo che ho deciso di realizzare una piccola e breve guida al suo utilizzo.</p>
 
 <p>Angular supporta e anzi invita caldamente all’utilizzo di Typescript, un superset di Javascript che introduce numerose funzionalità aggiuntive tra cui come il nome suggerisce un maggiore controllo sui tipi.<br />
 Il framework stesso è  scritto in Typescript!<br />
 Imparare ad utilizzare Angular può inizialmente richiedere un pochino di tempo, soprattutto se non si conoscono Typescript o l’approccio MVC ma posso assicurarvi che vi darà non poche soddisfazioni una volta appreso.</p>
 
+<h2 id="la-guida">La guida</h2>
 <p>Pubblicherò quindi in queste prossime settimane una breve guida su come realizzare una SPA (Single Page Application) con Angular. Il backend verrà realizzato invece con NodeJS in modo tale da rimanere sempre in casa Javascript.<br />
-Questa guida è più una sorta di introduzione alle varie tecnologie ed è scritta da uno studente per chi desidera approcciarsi per la prima volta al mondo di Angular e Node!</p>
+Questa guida è più una sorta di introduzione alle varie tecnologie ed è scritta da uno studente per chi desidera approcciarsi per la prima volta al mondo di Angular e Node!<br />
+Ci tengo inoltre a sottolineare che non scriverò una guida passo passo ma che darò qualche consiglio su come approcciarsi e su come ho personalmente risolto i vari problemi che mi sono trovato ad affrontare. <br />
+Se state cercando una guida dettagliata, il web ne è già pieno e non ho minimamente la presunzione di poter scrivere qualcosa di altrettanto valido.<br /></p>
+<blockquote>
+  <p>Tutto il codice del progetto è disponibile nella seguente <a href="https://github.com/LucaBozzetto/EasyRestaurant">repository Github</a> mentre se desiderate testare l’applicazione senza dover scaricare nulla potete dare un occhiata alla <a href="https://easyrestaurant-frontend.herokuapp.com/">versione online</a> hostata su Heroku.</p>
+</blockquote>
 
 <p>Qui di seguito lascio la lista con i link agli articoli finora pubblicati in merito alla guida:<br /></p>
 <ul>
   <li><a href="https://lucabozzetto.github.io/lapplicazione-easyrestaurant/">L’applicazione: gestione di un ristorante</a></li>
+  <li><a href="https://lucabozzetto.github.io//mockup-interfacce-e-definizione-api/">Mockup interfacce e definizione API</a></li>
 </ul>
 
 
@@ -149,8 +158,8 @@ Questa guida è più una sorta di introduzione alle varie tecnologie ed è scrit
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://lucabozzetto.github.io/realizzare-una-single-page-application-con-angular-e-nodejs/';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = 'https://lucabozzetto.github.io/realizzare-una-single-page-application-con-angular-e-nodejs/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = 'http://localhost:4000/realizzare-una-single-page-application-con-angular-e-nodejs/';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'http://localhost:4000/realizzare-una-single-page-application-con-angular-e-nodejs/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

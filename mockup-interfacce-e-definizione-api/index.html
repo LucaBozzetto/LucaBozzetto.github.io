@@ -10,24 +10,24 @@
     <meta name="author" content="Luca Bozzetto">
     
     
-    <title>Hello World! - Luca Bozzetto's Blog</title> -->
+    <title>Mockup interfacce e definizione API - Luca Bozzetto's Blog</title> -->
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Hello World! | Luca Bozzetto</title>
+<title>Mockup interfacce e definizione API | Luca Bozzetto</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Hello World!" />
+<meta property="og:title" content="Mockup interfacce e definizione API" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Il titolo giusto per il primo post di questo blog. Credo. Non ho al momento in programma di pubblicare articoli con costanza, diciamo che e’ una sorta di progetto a tempo perso. Generalmente gli argomenti saranno relativi all’informatica che e’ la mia passione ma potrei pubblicare di tanto in tanto qualcosa di diverso e meno noioso 😛 Inizialmente volevo scrivere tutti i miei articoli in inglese e poi tradurli in italiano ma temo di non avere il tempo materiale per scrivere lo stesso articolo due volte in due lingue differenti quindi in base all’estro pubblichero’ in una lingua o nell’altra. Per chi volesse trovare solo gli articoli in italiano basta cliccare sul tag ‘Italiano’. Il tempo vola e solitamente il primo ‘Hello World’ dovrebbe richiedere poco tempo quindi vi lascio in attesa del prossimo post!" />
-<meta property="og:description" content="Il titolo giusto per il primo post di questo blog. Credo. Non ho al momento in programma di pubblicare articoli con costanza, diciamo che e’ una sorta di progetto a tempo perso. Generalmente gli argomenti saranno relativi all’informatica che e’ la mia passione ma potrei pubblicare di tanto in tanto qualcosa di diverso e meno noioso 😛 Inizialmente volevo scrivere tutti i miei articoli in inglese e poi tradurli in italiano ma temo di non avere il tempo materiale per scrivere lo stesso articolo due volte in due lingue differenti quindi in base all’estro pubblichero’ in una lingua o nell’altra. Per chi volesse trovare solo gli articoli in italiano basta cliccare sul tag ‘Italiano’. Il tempo vola e solitamente il primo ‘Hello World’ dovrebbe richiedere poco tempo quindi vi lascio in attesa del prossimo post!" />
-<link rel="canonical" href="http://localhost:4000/hello-world/" />
-<meta property="og:url" content="http://localhost:4000/hello-world/" />
+<meta name="description" content="Scopriamo insieme cosa significa progettare un set di API in stile RESTful e come approcciare al meglio lo sviluppo di un backend. Gli strumenti che ci possono facilitare il compito e cosa dobbiamo tenere in considerazione durante la fase di progettazione e definizione degli endpoints." />
+<meta property="og:description" content="Scopriamo insieme cosa significa progettare un set di API in stile RESTful e come approcciare al meglio lo sviluppo di un backend. Gli strumenti che ci possono facilitare il compito e cosa dobbiamo tenere in considerazione durante la fase di progettazione e definizione degli endpoints." />
+<link rel="canonical" href="http://localhost:4000/mockup-interfacce-e-definizione-api/" />
+<meta property="og:url" content="http://localhost:4000/mockup-interfacce-e-definizione-api/" />
 <meta property="og:site_name" content="Luca Bozzetto" />
-<meta property="og:image" content="http://localhost:4000/hello-world.png" />
+<meta property="og:image" content="http://localhost:4000/RESTfil-API.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-10-15T00:30:00+02:00" />
+<meta property="article:published_time" content="2019-06-05T14:59:39+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@LucaBozz" />
 <script type="application/ld+json">
-{"description":"Il titolo giusto per il primo post di questo blog. Credo. Non ho al momento in programma di pubblicare articoli con costanza, diciamo che e’ una sorta di progetto a tempo perso. Generalmente gli argomenti saranno relativi all’informatica che e’ la mia passione ma potrei pubblicare di tanto in tanto qualcosa di diverso e meno noioso 😛 Inizialmente volevo scrivere tutti i miei articoli in inglese e poi tradurli in italiano ma temo di non avere il tempo materiale per scrivere lo stesso articolo due volte in due lingue differenti quindi in base all’estro pubblichero’ in una lingua o nell’altra. Per chi volesse trovare solo gli articoli in italiano basta cliccare sul tag ‘Italiano’. Il tempo vola e solitamente il primo ‘Hello World’ dovrebbe richiedere poco tempo quindi vi lascio in attesa del prossimo post!","@type":"BlogPosting","url":"http://localhost:4000/hello-world/","image":"http://localhost:4000/hello-world.png","headline":"Hello World!","dateModified":"2018-10-15T00:30:00+02:00","datePublished":"2018-10-15T00:30:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/hello-world/"},"@context":"http://schema.org"}</script>
+{"description":"Scopriamo insieme cosa significa progettare un set di API in stile RESTful e come approcciare al meglio lo sviluppo di un backend. Gli strumenti che ci possono facilitare il compito e cosa dobbiamo tenere in considerazione durante la fase di progettazione e definizione degli endpoints.","@type":"BlogPosting","url":"http://localhost:4000/mockup-interfacce-e-definizione-api/","image":"http://localhost:4000/RESTfil-API.png","headline":"Mockup interfacce e definizione API","dateModified":"2019-06-05T14:59:39+02:00","datePublished":"2019-06-05T14:59:39+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/mockup-interfacce-e-definizione-api/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -97,29 +97,58 @@
         <!-- <div class="col-lg-8"> -->
 
           <!-- Title -->
-          <h1 class="mt-4">Hello World!</h1>
+          <h1 class="mt-4">Mockup interfacce e definizione API</h1>
 
           <hr>
 
           <!-- Date/Time -->
-          <p>Posted on 15 Oct 2018</p>
+          <p>Posted on 05 Jun 2019</p>
 
           <hr>
 
           <!-- Preview Image -->
-          <img class="img-fluid rounded" src="/img/hello-world.png" alt="article image">
+          <img class="img-fluid rounded" src="/img/RESTfil-API.png" alt="article image">
 
           <hr>
 
           <!-- Post Content -->
-          <p>Il titolo giusto per il primo post di questo blog. Credo.<br />
-Non ho al momento in programma di pubblicare articoli con costanza, diciamo che e’ una sorta di progetto a tempo perso.<br />
-Generalmente gli argomenti saranno relativi all’informatica che e’ la mia passione ma potrei pubblicare di tanto in tanto qualcosa di diverso e meno noioso 😛<br />
-Inizialmente volevo scrivere tutti i miei articoli in inglese e poi tradurli in italiano ma temo di non avere il tempo materiale per scrivere lo stesso articolo due volte in due lingue differenti quindi in base all’estro pubblichero’ in una lingua o nell’altra.<br />
-Per chi volesse trovare solo gli articoli in italiano basta cliccare sul tag ‘Italiano’.<br />
-Il tempo vola e solitamente il primo ‘Hello World’ dovrebbe richiedere poco tempo quindi vi lascio in attesa del prossimo post!</p>
+          <blockquote>
+  <p>Questo articolo fa parte della guida allo sviluppo di una SPA con Angular. Se ti sei perso gli articoli prima <a href="https://lucabozzetto.github.io/realizzare-una-single-page-application-con-angular-e-nodejs/">clicca qui</a></p>
+</blockquote>
 
-<p><em>PS: <a href="http://jekyllrb.com/">jekyll</a> e’ davvero ‘na figata, in due secondi ti fai un blog semplice semplice!</em></p>
+<p>Prima di partire con il coding vero e proprio ho pensato fosse una buona idea definire con precisione l’applicazione sia a livello di funzionalità che a livello di interazioni / usabilità. <br />
+Per questo come prima cosa ho provveduto a studiare un mockup ( <a href="https://ibb.co/sCN1gKk">disponibile qui</a> ) delle possibili interazioni ed interfacce in modo tale da avere più chiaro in testa il possibile funzionamento dell’applicazione. Successivamente ho provveduto a definire le risorse e i relativi endpoints. <br /></p>
+
+<h2 id="api-in-stile-restful">API in stile RESTful</h2>
+<p>Con l’acronimo API si intende Application Programming Interface e non è altro che la creazione di una serie di endpoint (delle URL) che rispondono alle richieste fatte da uno sviluppatore.
+Praticamente una raccolta di metodi che ci permettono di collegare librerie o applicazioni presenti su diversi sistemi. <br />
+Il significato dell’acronimo REST è invece REpresentational State Transfer, ovvero una rappresentazione del trasferimento di stato di un determinato dato. REST non è una tecnologia, piuttosto descrive una serie di linee guida e di approcci che definiscono lo stile con cui i dati vengono trasmessi.<br />
+Ora che abbiamo finito con gli acronimi possiamo andare a vedere davvero cosa significa realizzare un set di API RESTful.<br />
+Oramai saper definire API RESTful è un prerequisito per chiunque voglia lavorare su un backend web.<br />
+Tuttavia non esiste uno standard per la realizzazione di una API ma solamente una seria di <strong>linee guida</strong> che se rispettate garantiscono un buon risultato finale:</p>
+<ul>
+  <li>Consistenza all’interno dell’intera API</li>
+  <li>Stateless ovvero non esistono sessioni nel nostro server e per tanto non salviamo informazioni tra una richiesta e l’altra. Di fatto ogni richiesta è una comunicazione a se stante e il server non conserva memoria di eventuali richiesta precedenti arrivando a non tenere traccia nemmeno delle informazioni di login.</li>
+  <li>Utilizzo degli status code HTTP per velocizzare e facilitare le risposte e la loro leggibilità.</li>
+  <li>Definizione di URL endpoint che seguono una determinata logica</li>
+</ul>
+
+<p>Accopiati agli endpoint si utilizzano i metodi HTTP che hanno lo scopo di rappresentare le azioni che intendiamo compiere su una determinata risorsa:</p>
+<ul>
+  <li><strong>GET</strong>: utililizzato come il nome suggerisce quando desideriamo ottenere una risorsa o set di dati.</li>
+  <li><strong>POST</strong>: da usare quando si aggiungono nuovi elementi di un determinato tipo di risorsa.</li>
+  <li><strong>DELETE</strong>: neanche a dirlo questo metodo lo si utilizza per eliminare dei dati.</li>
+  <li><strong>PUT</strong>: Da utilizzare quando si desidera effetuare l’update sostituendo del tutto una risorsa. Si può anche utilizzare per sostituire solo in parte un dato ma per questo scopo è più indicato il prossimo metodo.</li>
+  <li><strong>PATCH</strong>: Come appena spiegato PATCH è da utilizzare quando si vuole effetuare l’update di una parte di una risorsa, modificandone alcune delle informazioni.</li>
+</ul>
+
+<p>Fatta questa breve parentesi di introduzione c’è da dire che realizzare una API in stile RESTful richiede un minimo di pratica.<br />
+Per sperimentare facilmente senza dover per forza scrivere nel frattempo l’intero codice per il vostro backend vi suggerisco di utilizzare <a href="https://www.getpostman.com/">Postman</a>, una magnifica applicazione che vi permetterà di realizzare e testare le vostre API in maniera semplice e veloce.<br />
+Io l’ho inoltre usato per testare le API man mano che scrivevo il codice per il mio server, velocizzando di molto i miei tempi di sviluppo e test.<br />
+Tra le numerose funzionalità che Postman offre vi è inoltre la possibilità di documentare in maniera elegamente il proprio set di API.  Una buona documentazione è infatti importante quasi tanto quanto un buon set di API e in questo Postman vi faciliterà non poco il compito, fornendovi anche qualche utile spunto.<br />
+Potete dare un occhiata alle API e alla loro documentazione per EasyRestaurant <a href="https://documenter.getpostman.com/view/6803722/SVYxnF9P?version=latest">direttamente qui</a> ma vi suggerisco di provare prima a realizzare un vostro set di endpoints e di sperimentare con Postman prima di sbirciare come ho risolto io il tutto.</p>
+
+<p>Nel prossimo articolo daremo un’occhiata veloce a come approcciare lo sviluppo di un backend con NodeJS e le tecnologie che ho utilizzato per rendere lo sviluppo un pochino più veloce e semplice.</p>
 
 
           <hr>
@@ -128,7 +157,9 @@ Il tempo vola e solitamente il primo ‘Hello World’ dovrebbe richiedere poco 
   
     <a class="tag-text" href='/tag/Italiano'>Italiano</a>,  
   
-    <a class="tag-text" href='/tag/Misc'>Misc</a> 
+    <a class="tag-text" href='/tag/Angular'>Angular</a>,  
+  
+    <a class="tag-text" href='/tag/Guide'>Guide</a> 
   
           </p>
 
@@ -142,8 +173,8 @@ Il tempo vola e solitamente il primo ‘Hello World’ dovrebbe richiedere poco 
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'http://localhost:4000/hello-world/';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = 'http://localhost:4000/hello-world/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = 'http://localhost:4000/mockup-interfacce-e-definizione-api/';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'http://localhost:4000/mockup-interfacce-e-definizione-api/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

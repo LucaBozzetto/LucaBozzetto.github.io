@@ -18,13 +18,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Studente di Informatica presso Università Ca’Foscari di Venezia. Appassionato di Infosec e Web Development. Pubblico sul mio blog articoli a tema IT e non solo." />
 <meta property="og:description" content="Studente di Informatica presso Università Ca’Foscari di Venezia. Appassionato di Infosec e Web Development. Pubblico sul mio blog articoli a tema IT e non solo." />
-<link rel="canonical" href="https://lucabozzetto.github.io/blog/" />
-<meta property="og:url" content="https://lucabozzetto.github.io/blog/" />
+<link rel="canonical" href="http://localhost:4000/blog/" />
+<meta property="og:url" content="http://localhost:4000/blog/" />
 <meta property="og:site_name" content="Luca Bozzetto" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@LucaBozz" />
 <script type="application/ld+json">
-{"description":"Studente di Informatica presso Università Ca’Foscari di Venezia. Appassionato di Infosec e Web Development. Pubblico sul mio blog articoli a tema IT e non solo.","@type":"WebPage","url":"https://lucabozzetto.github.io/blog/","headline":"Luca Bozzetto","@context":"http://schema.org"}</script>
+{"description":"Studente di Informatica presso Università Ca’Foscari di Venezia. Appassionato di Infosec e Web Development. Pubblico sul mio blog articoli a tema IT e non solo.","@type":"WebPage","url":"http://localhost:4000/blog/","headline":"Luca Bozzetto","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -46,6 +46,7 @@
 
     <!-- Custom styles for this template -->
     <link href='/css/blog-home.css' rel="stylesheet">
+    <!-- <link href='/css/syntax.css' rel="stylesheet"> -->
 
 
   </head>
@@ -97,6 +98,34 @@
           </h1>
 
           
+          
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <img class="card-img-top" src="/img/mongodb.png" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">MongoDB e Mongoose</h2>
+              <p class="card-text">Dopo aver progettato le nostre API è arrivato finalmente il momento di sviluppare il nostro backend. <br />
+Una rapida occhiata a MongoDB e MongooseJS ci aiuterà a gestire in maniera rapida le nostre collezioni di dati e le interazioni con un database non relazionale.</p>
+              <a href="/mongodb-e-mongoose/" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on 05 July 2019
+            </div>
+          </div>
+          
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <img class="card-img-top" src="/img/RESTfil-API.png" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">Mockup interfacce e definizione API</h2>
+              <p class="card-text">Scopriamo insieme cosa significa progettare un set di API in stile RESTful e come approcciare al meglio lo sviluppo di un backend. <br />
+Gli strumenti che ci possono facilitare il compito e cosa dobbiamo tenere in considerazione durante la fase di progettazione e definizione degli endpoints.</p>
+              <a href="/mockup-interfacce-e-definizione-api/" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on 05 June 2019
+            </div>
+          </div>
           
           <!-- Blog Post -->
           <div class="card mb-4">
@@ -336,7 +365,7 @@ const hitTemplate = function(hit) {
 
   let img = hit.image;
 
-  let url = `https://lucabozzetto.github.io${hit.url}#${hit.anchor}`;
+  let url = `http://localhost:4000${hit.url}#${hit.anchor}`;
 
   const title = hit._highlightResult.title.value;
   let excerpt = hit.excerpt_html;

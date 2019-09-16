@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <meta name="google-site-verification" content="TXt7r9bvkqw69I8FKIi-PFRaLY-b8220JxzKIbpNBnc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta charset="utf-8">
+    <meta name="description" content="Luca Bozzetto is an Italian Computer Science student at Ca'Foscari University of Venice.">
+    <meta name="author" content="Luca Bozzetto">
+    
+    
+    <title>MongoDB e Mongoose - Luca Bozzetto's Blog</title> -->
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>MongoDB e Mongoose | Luca Bozzetto</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="MongoDB e Mongoose" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Dopo aver progettato le nostre API è arrivato finalmente il momento di sviluppare il nostro backend. Una rapida occhiata a MongoDB e MongooseJS ci aiuterà a gestire in maniera rapida le nostre collezioni di dati e le interazioni con un database non relazionale." />
+<meta property="og:description" content="Dopo aver progettato le nostre API è arrivato finalmente il momento di sviluppare il nostro backend. Una rapida occhiata a MongoDB e MongooseJS ci aiuterà a gestire in maniera rapida le nostre collezioni di dati e le interazioni con un database non relazionale." />
+<link rel="canonical" href="http://localhost:4000/mongodb-e-mongoose/" />
+<meta property="og:url" content="http://localhost:4000/mongodb-e-mongoose/" />
+<meta property="og:site_name" content="Luca Bozzetto" />
+<meta property="og:image" content="http://localhost:4000/mongodb.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-05T15:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@LucaBozz" />
+<script type="application/ld+json">
+{"description":"Dopo aver progettato le nostre API è arrivato finalmente il momento di sviluppare il nostro backend. Una rapida occhiata a MongoDB e MongooseJS ci aiuterà a gestire in maniera rapida le nostre collezioni di dati e le interazioni con un database non relazionale.","@type":"BlogPosting","url":"http://localhost:4000/mongodb-e-mongoose/","image":"http://localhost:4000/mongodb.png","headline":"MongoDB e Mongoose","dateModified":"2019-07-05T15:00:00+02:00","datePublished":"2019-07-05T15:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/mongodb-e-mongoose/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="/img/icons/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon-180x180.png" />
+    <!-- END Favicon and touch icons -->
+
+    <!-- Bootstrap core CSS -->
+    <link href='/vendor/bootstrap/css/bootstrap.min.css' rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='/css/blog-home.css' rel="stylesheet">
+    <!-- <link href='/css/syntax.css' rel="stylesheet"> -->
+
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/blog">Luca Bozzetto - Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/blog">Blog
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contact">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class='content'>
+
+    <!-- Page Content -->
+    <div class="container">
+      
+      <div class="row">
+
+      <div class="col-md-8 order-0">
+          <h1 id="search-h1" class="my-4" hidden>Your Search<small> results</small></h1>
+        <div id="search-hits">
+                 <!-- Post Content Column -->
+        <!-- <div class="col-lg-8"> -->
+
+          <!-- Title -->
+          <h1 class="mt-4">MongoDB e Mongoose</h1>
+
+          <hr>
+
+          <!-- Date/Time -->
+          <p>Posted on 05 Jul 2019</p>
+
+          <hr>
+
+          <!-- Preview Image -->
+          <img class="img-fluid rounded" src="/img/mongodb.png" alt="article image">
+
+          <hr>
+
+          <!-- Post Content -->
+          <blockquote>
+  <p>Questo articolo fa parte della guida allo sviluppo di una SPA con Angular. Se ti sei perso gli articoli prima <a href="https://lucabozzetto.github.io/realizzare-una-single-page-application-con-angular-e-nodejs/">clicca qui</a></p>
+</blockquote>
+
+<p>Dopo aver progettato le nostre API è arrivato finalmente il momento di sviluppare il nostro backend. <br />
+Avremo sicuramente bisogno di memorizzare i nostri dati in un database e <a href="https://www.mongodb.com">MongoDB</a> può fare proprio al caso nostro! <br />
+MongoDB infatti è un database non relazione che si intregra particolarmente bene con i linguaggi dinamici come javascript e non richiede una progettazione a priori del database. <br />
+Il database è infatti orientato ai documenti e non alle relazioni tra i dati. Inoltre lo schema dinamico (schema-less) ci permette di salvare dati anche non omogenei (con ad esempio un numero di colonne diverso tra loro) nella stessa collezione!<br />
+Tuttavia utilizzare MongoDB direttamente insieme a Node e Express può rivelarsi un’operazione lunga e poco simpatica. Ecco quindi che in nostro aiuto viene <a href="https://mongoosejs.com">Mongoose</a>.<br />
+Mongoose è una libreria di Object Document Mapping ( ODM ) che permette di definire lo schema dei documenti attraverso oggetti Javascript per effettuare il mapping automatico da e verso il database.<br />
+Grazie a questa comoda libreria andremo a lavorare su oggetti Javascript come siamo abituati ma quest’ultimi ci metterano a disposizione numerosi metodi per salvare e/o effetuare altre operazioni sul nostro database.<br />
+Per essere più chiaro eccovi qualche esempio su come lavorare con mongoose.<br /></p>
+
+<h2 id="collegamento-al-database">Collegamento al database</h2>
+<p>Il mio consiglio è quello di realizzare nella vostra cartella dei modelli un file chiamato db.js dove andrete a definire il setup della connessione al database e importerete i vari schemi di Mongoose di cui a breve di parlerò. <br />
+Un esempio di come ho realizzato il mio è il seguente:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mongoose'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">dbURI</span> <span class="o">=</span> <span class="s1">'localhost'</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">'production'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">dbURI</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">MONGODB_URI</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">dbURI</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">useNewUrlParser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="nx">mongoose</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="s1">'useCreateIndex'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nx">mongoose</span><span class="p">.</span><span class="nx">connection</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'connected'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Mongoose connected to </span><span class="p">${</span><span class="nx">dbURI</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">mongoose</span><span class="p">.</span><span class="nx">connection</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Mongoose connection error:'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">mongoose</span><span class="p">.</span><span class="nx">connection</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'disconnected'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Mongoose disconnected'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">gracefulShutdown</span> <span class="o">=</span> <span class="p">(</span><span class="nx">msg</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">mongoose</span><span class="p">.</span><span class="nx">connection</span><span class="p">.</span><span class="nx">close</span><span class="p">(</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Mongoose disconnected through </span><span class="p">${</span><span class="nx">msg</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="nx">callback</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="c1">// For nodemon restarts</span>
+<span class="nx">process</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">'SIGUSR2'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">gracefulShutdown</span><span class="p">(</span><span class="s1">'nodemon restart'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">process</span><span class="p">.</span><span class="nx">kill</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">pid</span><span class="p">,</span> <span class="s1">'SIGUSR2'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+<span class="c1">// For app termination</span>
+<span class="nx">process</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'SIGINT'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">gracefulShutdown</span><span class="p">(</span><span class="s1">'app termination'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+<span class="c1">// For Heroku app termination</span>
+<span class="nx">process</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'SIGTERM'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">gracefulShutdown</span><span class="p">(</span><span class="s1">'Heroku app shutdown'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">});</span>
+	<span class="nx">require</span><span class="p">(</span><span class="s1">'./users'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>Come potete vedere questo file si limita in sostanza a stabilire una connessione con il nostro database e a terminare correttamente quest’ultima in caso di arresto dell’applicazione in maniera non prevista. <br />
+L’ultima riga ossia <code class="highlighter-rouge">require('./users');</code> ci lascia intendere che stiamo effettuando l’import di un ulteriore modello. <br />
+In questo modello come vedremo tra poco ho definito il mio schema di Mongoose.</p>
+
+<h2 id="schemas-models-e-loro-utilizzo">Schemas, Models e loro utilizzo</h2>
+<p>La vera chicca di mongoose sono gli schemi e i modelli. <br />
+Con i primi andiamo a definire la struttura dei documenti di una determinata collezione. <br />
+Questo significa che strutturiamo un minimo i nostri dati per avere una maggiore consistenza. <br />
+I Modelli invece non sono altro che delle funzioni (costruttori)  che permettono di costruire oggetti (basandoci su un determinato schema definito in precedenza) e di memorizzarli nella rispettiva collezione del database. <br />
+Una volta definito uno schema e creato un modello possiamo utilizzare quest’ultimo per:</p>
+<ul>
+  <li>Effettuare query nel database eg <code class="highlighter-rouge">&lt;model&gt;.find({})</code></li>
+  <li>Creare un nuovo oggetto eg <code class="highlighter-rouge">&lt;model&gt;.create({obj})</code></li>
+  <li>Rimuovere oggetti eg <code class="highlighter-rouge">&lt;model&gt;.remove({})</code></li>
+</ul>
+
+<p>Ecco per esempio come ho definito lo schema per i miei utenti su EasyRestaurant:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mongoose'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">crypto</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'crypto'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">jwt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'jsonwebtoken'</span><span class="p">);</span>
+
+<span class="c1">// This obj describes the various roles the employees can assume</span>
+<span class="kd">const</span> <span class="nx">Role</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">({</span>
+  <span class="na">Waiter</span><span class="p">:</span> <span class="s1">'waiter'</span><span class="p">,</span>
+  <span class="na">Bar</span><span class="p">:</span> <span class="s1">'bar'</span><span class="p">,</span>
+  <span class="na">Cook</span><span class="p">:</span> <span class="s1">'cook'</span><span class="p">,</span>
+  <span class="na">Cashier</span><span class="p">:</span> <span class="s1">'cashier'</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">userSchema</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">({</span>
+  <span class="na">username</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">unique</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">lowercase</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">minLength</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">maxLenght</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">name</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">surname</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">role</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">enum</span><span class="p">:</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">Role</span><span class="p">),</span>
+    <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">hash</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">salt</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">admin</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+    <span class="na">default</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">validate</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">==</span> <span class="nx">Role</span><span class="p">.</span><span class="nx">Cashier</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="kc">true</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">!=</span> <span class="nx">Role</span><span class="p">.</span><span class="nx">Cashier</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span> <span class="o">==</span> <span class="kc">false</span><span class="p">)</span> <span class="p">);</span>
+    <span class="p">},</span>
+    <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">hired</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="na">default</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">wage</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">type</span><span class="p">:</span> <span class="nb">Number</span><span class="p">,</span>
+    <span class="na">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="nx">userSchema</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">setPassword</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">salt</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">randomBytes</span><span class="p">(</span><span class="mi">16</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">'hex'</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">hash</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">pbkdf2Sync</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">salt</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">'sha512'</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">'hex'</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">userSchema</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">validatePassword</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">pbkdf2Sync</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">salt</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="s1">'sha512'</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="s1">'hex'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">hash</span> <span class="o">===</span> <span class="nx">hash</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">userSchema</span><span class="p">.</span><span class="nx">statics</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">Role</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="nx">mongoose</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s1">'User'</span><span class="p">,</span> <span class="nx">userSchema</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>A questo punto sarà evidente come definire uno schema non è molto di più che definire la tipologia di dati accettati con qualche eventuale ulteriore validazione e/o valore di default. <br />
+Ci tengo a far notare come uno schema possa possedere dei metodi e dei valori statici. <br />
+Un chiaro esempio sono i metodi set e validePassword che per altro come da buona abitudine non salvano le password in chiaro ma una loro versione criptata. <br />
+L’ultima riga ci permette di esportare il modello assegnandovi lo schema appena definito. <br />
+Ecco quindi che potremmo utilizzarlo nella nostra applicazione in maniera semplice:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mongoose'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">User</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s1">'User'</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">();</span>
+  <span class="nx">user</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="s2">"Johndoe"</span><span class="p">;</span>
+  <span class="nx">user</span><span class="p">.</span><span class="nx">setPassword</span><span class="p">(</span><span class="s2">"secret"</span><span class="p">);</span>
+  <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">"John"</span><span class="p">;</span>
+  <span class="nx">user</span><span class="p">.</span><span class="nx">surname</span> <span class="o">=</span> <span class="s2">"Doe"</span><span class="p">;</span>
+  <span class="nx">user</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="s2">"waiter"</span><span class="p">;</span>
+
+  <span class="nx">user</span><span class="p">.</span><span class="nx">save</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// Handle the error</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+     <span class="c1">// The user has been created in our database!</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Oppure possiamo effettuare delle query:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mongoose'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">User</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s1">'User'</span><span class="p">);</span>
+
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">User</span>
+      <span class="p">.</span><span class="nx">findOne</span><span class="p">({</span><span class="na">username</span><span class="p">:</span> <span class="s2">"johndoe"</span><span class="p">})</span>
+      <span class="p">.</span><span class="nx">exec</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// The user was not found in our database</span>
+    <span class="p">}</span>
+		
+		<span class="c1">// user will now contain the required data</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span> <span class="c1">// johndoe</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>L’articolo di oggi è stato un pò più lungo del solito ma finalmente abbiamo visto qualche riga di codice per capire come funzionano i vari strumenti che possono farci penare un pochino meno in fase di sviluppo. <br />
+La prossima volta daremo un occhiata a Socket.io per gestire i websocket e alla soluzione che ho utilizzato nello specifico nel mio progetto. <br /></p>
+
+
+          <hr>
+          <p class="lead">
+            Tags:
+  
+    <a class="tag-text" href='/tag/Italiano'>Italiano</a>,  
+  
+    <a class="tag-text" href='/tag/Angular'>Angular</a>,  
+  
+    <a class="tag-text" href='/tag/Guide'>Guide</a> 
+  
+          </p>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'http://localhost:4000/mongodb-e-mongoose/';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'http://localhost:4000/mongodb-e-mongoose/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://lucabozzetto.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+<hr>
+     </div>
+     
+   </div>
+
+
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Tags</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    
+                
+                
+                
+                    
+                    <li>
+                      <a href='/tag/Italiano'>Italiano</a>
+                    </li>
+                    
+                    
+                
+                
+                    
+                    
+                
+                
+                    
+                    <li>
+                      <a href='/tag/Angular'>Angular</a>
+                    </li>
+                    
+                    
+                
+                
+                    
+                    
+                  </ul>
+                </div>
+
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    
+                
+                
+                
+                    
+                    
+                
+                
+                    
+                    <li>
+                      <a href='/tag/Misc'>Misc</a>
+                    </li>
+                    
+                    
+                
+                
+                    
+                    
+                
+                
+                    
+                    <li>
+                      <a href='/tag/Guide'>Guide</a>
+                    </li>
+                    
+                    
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Widget -->
+          <!-- <div class="card my-4">
+            <h5 class="card-header">Side Widget</h5>
+            <div class="card-body">
+              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            </div>
+          </div> -->
+
+        </div>
+    </div>
+    </div>
+  </div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">This blog is maintained with <a href='https://jekyllrb.com' class='footer-ref'><u>Jekyll</u></a> and it's hosted on <a href='https://pages.github.com' class='footer-ref'><u>Github Pages</u></a>.</p>
+      </div>
+    </footer>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src='/vendor/jquery/jquery.min.js'></script>
+    <script src='/vendor/bootstrap/js/bootstrap.bundle.min.js'></script>
+
+  </body>
+
+</html>
